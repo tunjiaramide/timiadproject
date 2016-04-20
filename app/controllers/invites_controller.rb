@@ -9,11 +9,11 @@ class InvitesController < ApplicationController
 	end
 
 	def new
-		@invite = Invite.new
+		@invite = current_user.invites.build
 	end
 
 	def create
-		@invite = Invite.new(invite_params)
+		@invite = current_user.invites.build(invite_params)
 		if @invite.save
 			redirect_to @invite, notice: "Successfully created Invite"
 		else
@@ -42,7 +42,7 @@ class InvitesController < ApplicationController
 	private
 
 	def invite_params
-		params.require(:invite).permit(:title, :date, :category, :location)
+		params.require(:invite).permit(:image, :title, :date, :category, :location)
 	end
 
 	def find_invite

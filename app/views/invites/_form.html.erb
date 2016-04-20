@@ -1,7 +1,9 @@
-<%= simple_form_for @invite do |f| %>
+<%= simple_form_for @invite, html: { multipart: true } do |f| %>
+  <%= f.input :image %>
   <%= f.input :title %>
+  <p class="maxtitle">Maximum of 30characters for title</p>
   <%= f.input :date %>
   <%= f.input :category %>
   <%= f.input :location %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

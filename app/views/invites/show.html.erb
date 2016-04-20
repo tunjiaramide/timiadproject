@@ -1,14 +1,64 @@
+<section class="contentall">
+<div class="container">
+<ul class="breadcrumb">
+    <li><a href="index.html">Home</a></li>
+    <li class="active">Music with timi</li>
+</ul>
+
+	<div class="col-md-3 sidebar">
+        <h4>Sort by Date</h4> 
 
 
+        <h4>Sort By Category</h4>
+        
+        <ul class="list list-unstyled">
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Religious</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Film</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Sports &amp; Fitness</a></li>
+            <li><a href="#">Health</a></li>
+            <li><a href="#">Parties</a></li>
+            <li><a href="#">Seminars &amp; Trainings</a></li>
+            <li><a href="#">Arts</a></li>
+            <li><a href="#">Educational</a></li>
+            <li><a href="#">Concert/Show</a></li>
+        <ul>
 
-<h1><%= @invite.title %></h1>
+    </div>
 
-<p><%= @invite.date %></p>
-<p><%= @invite.category %></p>
-<p><%= @invite.location %></p>
+<div class="col-md-9">
+<h2><%= @invite.title %></h2>
+<div class="row">
+	<div class="col-md-12 boximg">
+		<%= image_tag @invite.image, class: 'imgresize img-responsive' %>
+	</div>
+	 <div class="col-md-12 share">
+                <button type="button" class="btn btn-default btn-md" >
+                    Like <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>  40
+                </button>
+                     
+                     
+                <button type="button" class="btn btn-default btn-md" >
+                    Share <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>  23
+                </button>
+     </div>
+     <div class="col-md-12 info">
+		<p><%= @invite.date %></p>
+		<p><%= @invite.category %></p>
+		<p><%= @invite.user.email %></p>
+		<p><%= @invite.location %></p>
+	</div>
 
-<%= link_to "Home", root_path %>
-<%= link_to "Edit", edit_invite_path %>
-<%= link_to "Delete", invite_path, method: :delete %>
+	<button class="btn btn-default"><%= link_to "Home", root_path %></button>
+	<button class="btn btn-default"><%= link_to "Edit", edit_invite_path %></button>
+	<button class="btn btn-default"><%= link_to "Delete", invite_path, method: :delete %></button>
 
-<%= link_to "New Invite", new_invite_path %>
+</div>
+</div>
+
+
+</div>
+</section>
