@@ -1,0 +1,14 @@
+
+
+
+<h1><%= @invite.title %></h1>
+
+<p><%= @invite.date %></p>
+<p><%= @invite.category %></p>
+<p><%= @invite.location %></p>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_invite_path %>
+<%= link_to "Delete", invite_path, method: :delete %>
+
+<%= link_to "New Invite", new_invite_path %>

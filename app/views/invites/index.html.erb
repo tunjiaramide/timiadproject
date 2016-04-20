@@ -1,0 +1,6 @@
+<%= link_to "New Invite", new_invite_path %>
+
+<h2>Home Page</h2>
+<% @invites.each do |t| %>
+	<h2><%= link_to t.title, t %></h2>
+<% end %>
